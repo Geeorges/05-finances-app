@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 100%;
+}
+body{
+    margin: 0;
+}
+a,
+a:visited{
+    color: #fff;
+    text-decoration: underline;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+ul{
+    padding-left: 1.2rem;
+    margin: 1rem 0;
+    li{
+        margin-bottom: 0.2rem;
+    }
+}

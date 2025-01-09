@@ -5,9 +5,76 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link rel="stylesheet" href="./src/style/normalize.css">
+    <link rel="stylesheet" href="./src/style/style.css">
+    <script type="module" src="./src/script/main.js"></script>
+    <script type="module" src="./src/script/database.js"></script>
+    <script type="module" src="./src/script/databaseAdd.js"></script>
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div id="app">
+      <nav class="app__settings">
+        <a class="action__button" href="#">Edit income</a>
+        <a class="action__button" href="#">Edit expenses</a>
+      </nav>
+      <section id="app__default">
+        <header class="overview">
+          <ul class="overview__list grid">
+          <!--   <li class="overview__list--bank">
+              Bank
+              <span></span>
+            </li> -->
+            <li class="overview__list--income">
+              Income
+              <span class="currency__value"></span>
+            </li>
+            <li class="overview__list--expenses">
+              Expenses
+              <span class="currency__value"></span>
+            </li>
+            <li class="overview__list--remainder">
+              Remainder
+              <span class="currency__value"></span>
+            </li>
+            <li class="overview__list--necessary">
+              Necessary expenses
+              <span class="currency__value"></span>
+            </li>
+            <li class="overview__list--necessary-remainder">
+              Remainder after necessary
+              <span class="currency__value"></span>
+            </li>
+          </ul>
+        </header>
+        <section class="expenses">
+          <ul class="expenses__list">
+          </ul>
+          <a id="ctaNewExpense" class="action__button" href="#">Add new</a>
+        </section>
+      </section>
+      <section id="app__new-expense">
+       
+        <form action="new-expense__form" method="post">
+          <h3>Add new expense</h3>
+          <label for="expenseName" class="new-expense__form--name">
+              <span>Expense</span>
+              <input placeholder="Expense" type="text" name="newExpenseName" id="expenseName" required>
+          </label>
+          <label for="expensePrice" class="new-expense__form--price">
+              <span>Price</span>
+              <input placeholder="Price" type="text" name="newExpensePrice" id="expensePrice" required>
+          </label>
+          <label for="expenseNecessarity" class="new-expense__form--necessarity">
+              <span>Necessarity</span>
+              <input type="checkbox" name="newExpenseNecessarity" id="expenseNecessarity">
+            </label>
+          <button id="ctaAddNewExpense" data-title="Confirm" type="submit">Confirm</button>
+      </form>
+
+      </section>
+
+    </div>
   </body>
+
 </html>
